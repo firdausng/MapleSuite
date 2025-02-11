@@ -1,0 +1,27 @@
+@members_api_HostAddress = http://localhost:5288
+@leave_api_HostAddress = http://localhost:5142
+
+GET {{members_api_HostAddress}}/members
+Accept: application/json
+
+###
+
+GET {{members_api_HostAddress}}/health
+Accept: application/json
+
+###
+
+POST {{members_api_HostAddress}}/members
+Content-Type: application/json
+
+{
+    "firstName": "{{$random.name.firstName}}",
+    "lastName": "{{$random.name.lastName}}",
+    "email": "{{$random.email}}",
+    "DateOfBirth": "2022-07-26T00:00:00"
+}
+
+###
+
+GET {{leave_api_HostAddress}}/Leaves/users/0194f32b-d343-7699-9ed3-f5fdebd99e1f
+Content-Type: application/json
