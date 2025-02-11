@@ -47,4 +47,7 @@ builder.AddProject<Projects.leave_worker>("LeaveWorker")
     .WaitFor(leavedb)
     .WaitFor(kafka);
 
+builder.AddPnpmApp("pnpm-demo", "../frontend", "dev")
+    .WithExternalHttpEndpoints();
+
 builder.Build().Run();
