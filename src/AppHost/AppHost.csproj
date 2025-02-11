@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0"/>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>11d47bf2-9f59-446c-a668-3467e9474cab</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0"/>
+        <PackageReference Include="Aspire.Hosting.Kafka" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+        <PackageReference Include="Aspire.Hosting.Redis" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\leave.api\leave.api.csproj" />
+      <ProjectReference Include="..\leave.migration.worker\leave.migration.worker.csproj" />
+      <ProjectReference Include="..\leave.worker\leave.worker.csproj" />
+      <ProjectReference Include="..\member.worker\member.worker.csproj" />
+      <ProjectReference Include="..\MemberMigrationWorker\MemberMigrationWorker.csproj" />
+      <ProjectReference Include="..\members.api\members.api.csproj" />
+      <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+@members.api_HostAddress = http://localhost:5288
+
+GET http://localhost:5288/members
+Accept: application/json
+
+###
+
+GET http://localhost:5288/health
+Accept: application/json
+
+###
+
+POST http://localhost:5288/members
+Content-Type: application/json
+
+{
+    "firstName": "{{$random.name.firstName}}",
+    "lastName": "{{$random.name.lastName}}",
+    "email": "{{$random.email}}",
+    "DateOfBirth": "2022-07-26T00:00:00"
+}
+
+###
+
+GET http://localhost:5142/Leaves/users/0194f32b-d343-7699-9ed3-f5fdebd99e1f
+Content-Type: application/json

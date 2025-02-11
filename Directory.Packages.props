@@ -1,0 +1,26 @@
+<!-- For more info on central package management go to https://devblogs.microsoft.com/nuget/introducing-central-package-management/ -->
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <AspireVersion>9.0.0</AspireVersion>
+    <AspnetVersion>9.0.0</AspnetVersion>
+    <EfcoreVersion>9.0.0</EfcoreVersion>
+    <MicrosoftExtensionsVersion>9.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="4.6.0" />-->
+    <PackageVersion Include="Aspire.Confluent.Kafka" Version="9.0.0" />
+    <PackageVersion Include="Aspire.Hosting.Kafka" Version="9.0.0" />
+    <PackageVersion Include="Aspire.Hosting.PostgreSQL" Version="9.0.0" />
+    <PackageVersion Include="Aspire.Hosting.Redis" Version="9.0.0" />
+    <PackageVersion Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0" />
+    <PackageVersion Include="Aspire.StackExchange.Redis" Version="9.0.0" />
+    <PackageVersion Include="CloudNative.CloudEvents" Version="2.8.0" />
+    <PackageVersion Include="CloudNative.CloudEvents.NewtonsoftJson" Version="2.8.0" />
+    <PackageVersion Include="Confluent.Kafka" Version="2.6.0" />
+    <PackageVersion Include="MediatR" Version="12.4.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="RedLock.net" Version="2.3.2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+@leave.api_HostAddress = http://localhost:5142
+
+GET http://localhost:5142/Leaves
+Accept: application/json
+
+###
+
+POST http://localhost:5142/Leaves
+Content-Type: application/json
+
+{
+    "reason": "{{$random.name.firstName}}",
+    "leaveType": "Annual",
+    "memberId": "0194f32b-d343-7699-9ed3-f5fdebd99e1f",
+    "startDate": "2022-07-26T00:00:00",
+    "endDate": "2022-07-28T00:00:00"
+}
