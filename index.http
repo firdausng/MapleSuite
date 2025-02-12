@@ -23,5 +23,23 @@ Content-Type: application/json
 
 ###
 
-GET {{leave_api_HostAddress}}/Leaves/users/0194f32b-d343-7699-9ed3-f5fdebd99e1f
+GET {{leave_api_HostAddress}}/Leaves/users/0194f811-7f34-7ae7-8bb0-d72922d7b7e2
 Content-Type: application/json
+
+###
+
+GET {{leave_api_HostAddress}}/Leaves
+Accept: application/json
+
+###
+
+POST {{leave_api_HostAddress}}/Leaves
+Content-Type: application/json
+
+{
+    "reason": "{{$random.name.firstName}}",
+    "leaveType": "Annual",
+    "memberId": "0194f811-7f34-7ae7-8bb0-d72922d7b7e2",
+    "startDate": "2022-07-26T00:00:00",
+    "endDate": "2022-07-28T00:00:00"
+}

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace members.api.queries;
 
-public class GetMemberQuery: IRequest<Result<GetMemberDto>>
+internal sealed record GetMemberQuery: IRequest<Result<GetMemberDto>>
 {
     public GetMemberQuery(Guid id)
     {
@@ -15,7 +15,7 @@ public class GetMemberQuery: IRequest<Result<GetMemberDto>>
 
     public Guid Id { get; private set; }
     
-    public class GetMemberQueryHandler: IRequestHandler<GetMemberQuery, Result<GetMemberDto>>
+    internal sealed record GetMemberQueryHandler: IRequestHandler<GetMemberQuery, Result<GetMemberDto>>
     {
         private readonly MemberContext _context;
 
@@ -51,4 +51,4 @@ public class GetMemberQuery: IRequest<Result<GetMemberDto>>
     }
 }
 
-public record GetMemberDto(string FirstName, string LastName, Guid Id);
+public sealed record GetMemberDto(string FirstName, string LastName, Guid Id);

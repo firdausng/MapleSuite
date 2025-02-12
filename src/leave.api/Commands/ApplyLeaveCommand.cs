@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace leave.api.Commands;
 
-public class ApplyLeaveCommand : IRequest<Result<CreatedItemDto>>
+public sealed record ApplyLeaveCommand : IRequest<Result<CreatedItemDto>>
 {
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
@@ -14,7 +14,7 @@ public class ApplyLeaveCommand : IRequest<Result<CreatedItemDto>>
     public string LeaveType { get; set; }
     public Guid MemberId { get; set; }
 
-    public class Handler : IRequestHandler<ApplyLeaveCommand, Result<CreatedItemDto>>
+    internal sealed record Handler : IRequestHandler<ApplyLeaveCommand, Result<CreatedItemDto>>
     {
         private readonly LeaveContext _context;
 

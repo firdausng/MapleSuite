@@ -3,9 +3,9 @@ using leave.api.infra.data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace members.api.queries;
+namespace leave.api.Queries;
 
-public class GetLeaveQuery: IRequest<Result<GetLeaveDto>>
+public sealed record GetLeaveQuery: IRequest<Result<GetLeaveDto>>
 {
     public GetLeaveQuery(Guid id)
     {
@@ -14,7 +14,7 @@ public class GetLeaveQuery: IRequest<Result<GetLeaveDto>>
 
     public Guid Id { get; private set; }
     
-    public class GetMemberQueryHandler: IRequestHandler<GetLeaveQuery, Result<GetLeaveDto>>
+    internal sealed record GetMemberQueryHandler: IRequestHandler<GetLeaveQuery, Result<GetLeaveDto>>
     {
         private readonly LeaveContext _context;
 
@@ -50,4 +50,4 @@ public class GetLeaveQuery: IRequest<Result<GetLeaveDto>>
     }
 }
 
-public record GetLeaveDto(Guid MemberId, DateTime StartDate, DateTime EndDate, string LeaveType, string Reason, string Status);
+public sealed record GetLeaveDto(Guid MemberId, DateTime StartDate, DateTime EndDate, string LeaveType, string Reason, string Status);

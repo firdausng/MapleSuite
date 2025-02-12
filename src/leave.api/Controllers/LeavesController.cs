@@ -1,6 +1,6 @@
 using leave.api.Commands;
+using leave.api.Queries;
 using MediatR;
-using members.api.queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace leave.api.Controllers;

@@ -5,14 +5,14 @@ using members.api.infra.data;
 
 namespace members.api.Commands;
 
-public class RegisterMemberCommand : IRequest<CreatedItemDto>
+public sealed record RegisterMemberCommand : IRequest<CreatedItemDto>
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }
     public DateTime DateOfBirth { get; set; }
 
-    public class Handler : IRequestHandler<RegisterMemberCommand, CreatedItemDto>
+    public sealed record Handler : IRequestHandler<RegisterMemberCommand, CreatedItemDto>
     {
         private readonly MemberContext _context;
 
@@ -59,4 +59,4 @@ public class RegisterMemberCommand : IRequest<CreatedItemDto>
     
 }
 
-public record CreatedItemDto(Guid Id);
+public sealed record CreatedItemDto(Guid Id);

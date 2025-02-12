@@ -3,9 +3,9 @@ using leave.api.infra.data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace members.api.queries;
+namespace leave.api.Queries;
 
-public class GetMemberLeaveListQuery: IRequest<Result<PaginationDto<GetLeaveDto>>>
+public sealed record GetMemberLeaveListQuery: IRequest<Result<PaginationDto<GetLeaveDto>>>
 {
     public GetMemberLeaveListQuery(Guid memberId)
     {
@@ -14,7 +14,7 @@ public class GetMemberLeaveListQuery: IRequest<Result<PaginationDto<GetLeaveDto>
 
     public Guid MemberId { get; set; }
     
-    public class GetMemberLeaveListQueryHandler: IRequestHandler<GetMemberLeaveListQuery, Result<PaginationDto<GetLeaveDto>>>
+    internal sealed record GetMemberLeaveListQueryHandler: IRequestHandler<GetMemberLeaveListQuery, Result<PaginationDto<GetLeaveDto>>>
     {
         private readonly LeaveContext _context;
 

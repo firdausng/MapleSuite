@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace members.api.queries;
 
-public class GetMemberListQuery: IRequest<Result<PaginationDto<GetMemberDto>>>
+public sealed record GetMemberListQuery: IRequest<Result<PaginationDto<GetMemberDto>>>
 {
     
-    public class GetMemberQueryHandler: IRequestHandler<GetMemberListQuery, Result<PaginationDto<GetMemberDto>>>
+    internal sealed record GetMemberQueryHandler: IRequestHandler<GetMemberListQuery, Result<PaginationDto<GetMemberDto>>>
     {
         private readonly MemberContext _context;
 
